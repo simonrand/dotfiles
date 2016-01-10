@@ -39,6 +39,7 @@ binaries=(
   postgres
   mysql
   nginx
+  wget
 )
 
 echo "installing binaries..."
@@ -80,7 +81,15 @@ ln -s /usr/local/bin/subl /usr/local/bin/st
 # Copy latest dotfiles
 echo "copying dotfiles"
 cp ./.bash_profile ~/.bash_profile
+cp ./.gemrc ~/.gemrc
 cp ./com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
+# Install Package Control for Sublime 3
+package_path=~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
+mkdir -p "$package_path" && cd "$package_path"
+wget https://packagecontrol.io/Package%20Control.sublime-package
+
+# TODO Generate SSH keys (if none exist)
 
 # Tidy up
 echo "tidying..."

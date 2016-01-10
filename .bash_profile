@@ -1,5 +1,5 @@
 # PATH
-PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+PATH=$(brew --prefix coreutils)/libexec/gnubin:./bin:$PATH
 
 # Prompt
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -15,4 +15,9 @@ fi
 eval "$(rbenv init -)"
 
 # Aliases
+
+# Git
 alias gcom='git commit -m'
+
+# Elixir
+alias ips='iex -S mix phoenix.server'
