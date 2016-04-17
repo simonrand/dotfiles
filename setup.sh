@@ -56,7 +56,7 @@ apps=(
   dropbox
   google-chrome
   flash
-  iterm2
+  iterm2-beta
   sublime-text3
   atom
   qlcolorcode
@@ -82,15 +82,28 @@ ln -s /usr/local/bin/subl /usr/local/bin/st
 echo "copying dotfiles"
 cp ./.bash_profile ~/.bash_profile
 cp ./.gemrc ~/.gemrc
-cp ./com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+cp ./iterm/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
 
-# Install Package Control for Sublime 3
+# Install Package Control for Sublime 3 and setup
 package_path=~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
-mkdir -p "$package_path" && cd "$package_path"
-wget https://packagecontrol.io/Package%20Control.sublime-package
+if [ ! -f "$package_path"/Package\ Control.sublime-package ]; then
+  echo "Downloading Sublime Text Package Control.."
+  mkdir -p "$package_path"
+  wget https://packagecontrol.io/Package%20Control.sublime-package -O "$package_path"/Package\ Control.sublime-package
+fi
+cp ./sublime-text3/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+
+# OSX tweaks
+chflags nohidden ~/Library/
 
 # TODO Generate SSH keys (if none exist)
 
 # Tidy up
 echo "tidying..."
 brew cleanup
+
+# Final notes
+echo "[ ] Add home folder to sidebar and make default folder"
+echo "[ ] Install Ghostery"
+
+

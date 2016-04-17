@@ -1,0 +1,21 @@
+{
+  "installed_packages":
+  [
+    "Better CoffeeScript",
+    "BracketHighlighter",
+    "Color Highlighter",
+    "DashDoc",
+    "EditorConfig",
+    "Elixir",
+    "ERB Snippets",
+    "GitGutter",
+    "Package Control",
+    "Pretty JSON",
+    "RuboCop",
+    "Sass",
+    "SideBarEnhancements",
+    "SublimeLinter",
+    "SublimeLinter-jshint",
+    "Theme - Flatland"
+  ]
+}
