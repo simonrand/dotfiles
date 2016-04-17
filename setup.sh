@@ -110,7 +110,8 @@ brew cleanup
 
 # Final notes
 echo "[ ] Add home folder to sidebar and make default folder"
-echo "[ ] Install Ghostery"
+echo "[ ] Safari - Install Ghostery"
+echo "[ ] Safari - Turn on Developer menu"
 echo "App Store:"
 echo "  [ ] 1Password"
 echo "  [ ] Affinity Designer"
