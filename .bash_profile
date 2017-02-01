@@ -11,7 +11,7 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD/#$HOME/~}\007"'
 
 # Git Completions
 if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+  . `brew --prefix`/etc/bash_completion
 fi
 
 # rbenv
@@ -21,7 +21,11 @@ eval "$(rbenv init -)"
 
 # Git
 alias gcom='git commit -m'
-alias clean_branches='git branch | grep -v "staging" | xargs git branch -D'
+alias gco='git checkout'
+alias gs='git status'
+alias gl='git log'
+alias ga='git add'
+# alias clean_branches='git branch | grep -v "staging" | xargs git branch -D'
 
 # Elixir
 alias ips='iex -S mix phoenix.server'
@@ -34,7 +38,7 @@ alias i='irb'
 # Foreman
 alias fs='foreman start'
 
-# Import local specific
+# Local specific
 if [ -f ~/.bash_local ]; then
   source ~/.bash_local
 fi
