@@ -31,8 +31,9 @@ alias ga='git add'
 alias ips='iex -S mix phoenix.server'
 
 # Ruby/Rails
-alias c='rails c'
-alias s='rails s'
+alias c='bundle exec rails c'
+alias s='bundle exec rails s'
+alias g='bundle exec guard'
 alias i='irb'
 
 # Foreman
