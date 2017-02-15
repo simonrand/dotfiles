@@ -8,6 +8,12 @@ else
   command=install
 fi
 
+# Get some inputs
+echo Enter your email address:
+read email
+echo Enter your system username:
+read username
+
 # Command line tools
 echo "installing command line tools..."
 xcode-select --install
@@ -56,14 +62,19 @@ brew $command ${binaries[@]}
 # Install apps
 # Apps
 apps=(
-  atom
+  alfred
+  banktivity
   betterzipql
+  dash
   dropbox
-  flash
+  duet
   google-chrome
-  iterm2-beta
+  google-drive
+  handbrake
+  iterm2
   polymail
   postico
+  qbittorrent- qbittorrent
   qlcolorcode
   qlimagesize
   qlmarkdown
@@ -71,24 +82,37 @@ apps=(
   quicklook-csv
   quicklook-json
   sequel-pro
+  sketchup
+  skype
+  slack
   sublime-text3
+  superduper
   suspicious-package
+  transmit
+  vlc
 )
 
 # Install apps to /Applications
-# Default is: /Users/$user/Applications
 echo "installing apps..."
-brew cask install --appdir="/Applications" ${apps[@]}
+brew cask install ${apps[@]}
 
 # Link subl to st
 echo "linking st -> subl..."
 ln -s /usr/local/bin/subl /usr/local/bin/st
 
-# Copy latest dotfiles
+# # Copy latest dotfiles
 echo "copying dotfiles"
 cp ./.bash_profile ~/.bash_profile
 cp ./.gemrc ~/.gemrc
+cp ./.railsrc ~/.railsrc
+
+# NOTE: item2 plist will only work with /Users/simon home folder
 cp ./iterm/com.googlecode.iterm2.plist ~/Library/Preferences/com.googlecode.iterm2.plist
+
+sed "s/\[email\]/$email/" .gitconfig > ./.gitconfig_complete
+sed -i '' "s/\[username\]/$username/" ./.gitconfig_complete
+cp ./.gitconfig_complete ~/.gitconfig && rm ./.gitconfig_complete
+cp ./.gitignore ~/.gitignore
 
 # Install Package Control for Sublime 3 and setup
 package_path=~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
@@ -102,21 +126,37 @@ cp ./sublime-text3/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Us
 # OSX tweaks
 chflags nohidden ~/Library/
 
-# TODO Generate SSH keys (if none exist)
+# Generate an SSH key (if none exist)
+if [ ! -f ~/.ssh/id_rsa ]; then
+  mkdir ~/.ssh
+  ssh-keygen -t rsa -b 4096 -C "$email"
+  ssh-add ~/.ssh/id_rsa
+fi
 
 # Tidy up
 echo "tidying..."
 brew cleanup
 
-# Final notes
-echo "[ ] Add home folder to sidebar and make default folder"
-echo "[ ] Safari - Install Ghostery"
-echo "[ ] Safari - Turn on Developer menu"
-echo "App Store:"
+# App store apps
+echo "app store:"
 echo "  [ ] 1Password"
 echo "  [ ] Affinity Designer"
+echo "  [ ] Affinity Photo"
 echo "  [ ] Base"
 echo "  [ ] Clear"
 echo "  [ ] Divvy"
-echo "  [ ] iaWriter"
-echo "  [ ] Paste"
+echo "  [ ] iA Writer"
+echo "  [ ] Numbers"
+echo "  [ ] Pages"
+echo "  [ ] Tweetbot"
+echo "  [ ] Xcode"
+echo "..."
+
+echo "final notes:"
+echo "[ ] Make Finder menu bar dark"
+echo "[ ] Add home folder to sidebar and make default folder"
+echo "[ ] Safari - Install Ghostery, Shut Up and 1Password extension"
+echo "[ ] Safari - Turn on Developer menu"
+echo "..."
+
+echo "done!"
