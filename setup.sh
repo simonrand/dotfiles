@@ -74,7 +74,7 @@ apps=(
   iterm2
   polymail
   postico
-  qbittorrent- qbittorrent
+  qbittorrent
   qlcolorcode
   qlimagesize
   qlmarkdown
@@ -85,7 +85,7 @@ apps=(
   sketchup
   skype
   slack
-  sublime-text3
+  sublime-text
   superduper
   suspicious-package
   transmit
@@ -152,11 +152,18 @@ echo "  [ ] Tweetbot"
 echo "  [ ] Xcode"
 echo "..."
 
+# Divvy shortcuts
+echo "divvy shortcuts:"
+echo "divvy://import/YnBsaXN0MDDUAQIDBAUIVldUJHRvcFgkb2JqZWN0c1gkdmVyc2lvblkkYXJjaGl2ZXLRBgdUcm9vdIABqgkKFCssMztCSlJVJG51bGzSCwwNDlYkY2xhc3NaTlMub2JqZWN0c4AJpQ8QERITgAKABYAGgAeACN0VFhcYGRobHB0eHyALISIjJCIiJSYnJiklKl8QEnNlbGVjdGlvbkVuZENvbHVtbl8QEXNlbGVjdGlvblN0YXJ0Um93XGtleUNvbWJvQ29kZVdlbmFibGVkXWtleUNvbWJvRmxhZ3NfEBRzZWxlY3Rpb25TdGFydENvbHVtbltzaXplQ29sdW1uc1pzdWJkaXZpZGVkV25hbWVLZXlWZ2xvYmFsXxAPc2VsZWN0aW9uRW5kUm93WHNpemVSb3dzEAMQABASCRAICIADCBAHgARQ0i0uLzJYJGNsYXNzZXNaJGNsYXNzbmFtZaIwMVhTaG9ydGN1dFhOU09iamVjdFhTaG9ydGN1dN0VFhcYGRobHB0eHyALKSI0JCI2JSYnJiklKhATCRAECIADCIAE3RUWFxgZGhscHR4fIAspIjwkIiIlJicmKSUqEBQJCIADCIAE3RUWFxgZGhscHR4fIAspIkMkIkUlJicmKSUqEBcJEAYIgAMIgATdFRYXGBkaGxwdHh8gC0siTCQiIiUmJyYpJSoQBRAVCQiAAwiABNItLlNUo1RVMV5OU011dGFibGVBcnJheVdOU0FycmF5EgABhqBfEA9OU0tleWVkQXJjaGl2ZXIACAARABYAHwAoADIANQA6ADwARwBNAFIAWQBkAGYAbABuAHAAcgB0AHYAkQCmALoAxwDPAN0A9AEAAQsBEwEaASwBNQE3ATkBOwE8AT4BPwFBAUIBRAFGAUcBTAFVAWABYwFsAXUBfgGZAZsBnAGeAZ8BoQGiAaQBvwHBAcIBwwHFAcYByAHjAeUB5gHoAekB6wHsAe4CCQILAg0CDgIPAhECEgIUAhkCHQIsAjQCOQAAAAAAAAIBAAAAAAAAAFgAAAAAAAAAAAAAAAAAAAJL"
+
 echo "final notes:"
-echo "[ ] Make Finder menu bar dark"
-echo "[ ] Add home folder to sidebar and make default folder"
+echo "[ ] Finder - Make menu bar dark"
+echo "[ ] Finder - Add home folder to sidebar and make default folder"
 echo "[ ] Safari - Install Ghostery, Shut Up and 1Password extension"
 echo "[ ] Safari - Turn on Developer menu"
+echo "Set up sync folders:"
+echo "[ ] Alfred"
+echo "[ ] Dash"
 echo "..."
 
 echo "done!"
