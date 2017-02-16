@@ -81,6 +81,7 @@ apps=(
   qlprettypatch
   quicklook-csv
   quicklook-json
+  safari-technology-preview
   sequel-pro
   sketchup
   skype
