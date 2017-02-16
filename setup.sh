@@ -113,8 +113,13 @@ sed "s/\[email\]/$email/" .gitconfig > ./.gitconfig_complete
 sed -i '' "s/\[username\]/$username/" ./.gitconfig_complete
 cp ./.gitconfig_complete ~/.gitconfig && rm ./.gitconfig_complete
 cp ./.gitignore ~/.gitignore
-mkdir -p ~/.ssh
-cp ./.ssh/config ~/.ssh/config
+
+configs=( bundle ssh )
+for config in "${configs[@]}"
+do
+  mkdir -p ~/.$config
+  cp ./.$config/config ~/.$config/config
+done
 
 # Install Package Control for Sublime 3 and setup
 package_path=~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
