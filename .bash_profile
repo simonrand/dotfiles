@@ -19,6 +19,9 @@ eval "$(rbenv init -)"
 
 # Aliases
 
+# Shell
+mcd () { mkdir -p "$1" && cd "$1"; }
+
 # Git
 alias gcom='git commit -m'
 alias gco='git checkout'
@@ -28,7 +31,7 @@ alias ga='git add'
 # alias clean_branches='git branch | grep -v "staging" | xargs git branch -D'
 
 # Hub/Git
-alias gpr='hub pull-request -b'
+alias gpr='hub pull-request -o -b'
 
 # Elixir
 alias ips='iex -S mix phoenix.server'
