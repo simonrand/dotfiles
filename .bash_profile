@@ -27,6 +27,9 @@ alias gl='git log'
 alias ga='git add'
 # alias clean_branches='git branch | grep -v "staging" | xargs git branch -D'
 
+# Hub/Git
+alias gpr='hub pull-request -b'
+
 # Elixir
 alias ips='iex -S mix phoenix.server'
 

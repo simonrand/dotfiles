@@ -43,16 +43,17 @@ brew tap homebrew/dupes
 brew $command homebrew/dupes/grep
 
 binaries=(
-  git
   bash-completion
-  rbenv
-  ruby-build
-  rbenv-gemset
   elixir
-  node
-  postgres
+  git
+  hub
   mysql
   nginx
+  node
+  postgres
+  rbenv
+  rbenv-gemset
+  ruby-build
   wget
 )
 
@@ -156,6 +157,7 @@ echo "  [ ] Divvy"
 echo "  [ ] iA Writer"
 echo "  [ ] Numbers"
 echo "  [ ] Pages"
+echo "  [ ] Table Tool"
 echo "  [ ] Tweetbot"
 echo "  [ ] Xcode"
 echo "..."
