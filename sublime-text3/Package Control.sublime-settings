@@ -1,6 +1,7 @@
 {
   "installed_packages":
   [
+    "Auto Hide Sidebar",
     "Better CoffeeScript",
     "BracketHighlighter",
     "Color Highlighter",
@@ -16,6 +17,7 @@
     "SideBarEnhancements",
     "SublimeLinter",
     "SublimeLinter-jshint",
-    "Theme - Flatland"
+    "Theme - Flatland",
+    "TodoReview"
   ]
 }

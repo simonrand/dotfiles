@@ -102,7 +102,7 @@ brew cask install ${apps[@]}
 echo "linking st -> subl..."
 ln -s /usr/local/bin/subl /usr/local/bin/st
 
-# # Copy latest dotfiles
+# Copy latest dotfiles
 echo "copying dotfiles"
 cp ./.bash_profile ~/.bash_profile
 cp ./.gemrc ~/.gemrc
@@ -122,6 +122,9 @@ do
   mkdir -p ~/.$config
   cp ./.$config/config ~/.$config/config
 done
+
+# Copy files
+cp ./files/iosevka-light.ttf ~/Library/Fonts/
 
 # Install Package Control for Sublime 3 and setup
 package_path=~/Library/Application\ Support/Sublime\ Text\ 3/Installed\ Packages
