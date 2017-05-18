@@ -72,6 +72,7 @@ apps=(
   google-chrome
   google-drive
   handbrake
+  imageoptim
   iterm2
   polymail
   postico
