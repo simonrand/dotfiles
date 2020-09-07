@@ -54,7 +54,7 @@ apps=(
 )
 
 echo "installing cask apps.."
-brew cask install ${apps[@]}
+brew cask $command ${apps[@]}
 
 ####################################################################### dotfiles
 
@@ -73,7 +73,7 @@ done
 
 ############################################################################ SSH
 
-# Generate an SSH key (if none exist)
+# Generate a SSH key (if none exist)
 if [ ! -f ~/.ssh/id_rsa ]; then
   echo Enter your ssh key email address:
   read email
