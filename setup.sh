@@ -4,14 +4,10 @@ if [ "$1" == "upgrade" ]; then
   echo "upgrading and resetting system.."
   command=upgrade
 else
-  echo "installing system.."
+  echo "installing/resetting system.."
   command=install
 fi
 
-######################################################################### Inputs
-
-echo Enter your email address:
-read email
 username=$(whoami)
 
 ################################################################ macOS cli tools
@@ -79,6 +75,9 @@ done
 
 # Generate an SSH key (if none exist)
 if [ ! -f ~/.ssh/id_rsa ]; then
+  echo Enter your ssh key email address:
+  read email
+
   echo "generating ssh key.."
   mkdir ~/.ssh
   ssh-keygen -t rsa -b 4096 -C "$email"
@@ -88,10 +87,17 @@ fi
 ############################################################################ Git
 
 echo "setting up git.."
-sed "s/\[email\]/$email/" .gitconfig > ./.gitconfig_complete
-sed -i '' "s/\[username\]/$username/" ./.gitconfig_complete
-cp ./.gitconfig_complete ~/.gitconfig && rm ./.gitconfig_complete
 cp ./.gitignore ~/.gitignore
+
+# Generate a gitconfig file (if none exists)
+if [ ! -f ~/.gitconfig ]; then
+  echo Enter your Git config email address:
+  read email
+
+  sed "s/\[email\]/$email/" .gitconfig > ./.gitconfig_complete
+  sed -i '' "s/\[username\]/$username/" ./.gitconfig_complete
+  cp ./.gitconfig_complete ~/.gitconfig && rm ./.gitconfig_complete
+fi
 
 ########################################################################## Files
 
@@ -135,3 +141,4 @@ brew cleanup
 echo "done!"
 echo "....."
 echo "full app list: ~/Library/Mobile\ Documents/com~apple~CloudDocs/Library/apps.md"
+echo "setup notes: ~/Library/Mobile\ Documents/com~apple~CloudDocs/Library/setup_notes.md"
