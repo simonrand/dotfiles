@@ -1,0 +1,9 @@
+[{
+  "class": "sidebar_heading",
+  "font.bold": false,
+  "font.size": 10
+},
+  {
+  "class": "sidebar_label",
+  "font.size": 10
+}]

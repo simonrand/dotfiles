@@ -1,5 +1,0 @@
-{
-  "icons_all": true,
-  "highlight_all": true,
-  "file_exts": [".css", ".sass", ".scss", ".less", ".styl", ".html", ".js", ".sublime-settings", ".tmTheme", ".erb", ".haml", ".php"]
-}
