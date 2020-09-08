@@ -10,10 +10,16 @@ fi
 
 username=$(whoami)
 
+################################################################### macOS tweaks
+
+sh ./scripts/macos.sh
+
 ################################################################ macOS cli tools
 
 echo "installing command line tools.."
 xcode-select --install
+
+####################################################################### Homebrew
 
 sh ./scripts/homebrew.sh $command
 
@@ -39,18 +45,9 @@ cp ./files/FiraMono-Bold.otf ~/Library/Fonts/
 
 sh ./scripts/sublime_text.sh
 
-################################################################### macOS tweaks
-
-sh ./scripts/macos.sh
-
-########################################################################### tidy
-
-echo "tidying..."
-brew cleanup
-
 ########################################################################### done
 
 echo "done!"
 echo "....."
-echo "full app list: ~/Library/Mobile\ Documents/com~apple~CloudDocs/Library/apps.md"
-echo "setup notes: ~/Library/Mobile\ Documents/com~apple~CloudDocs/Library/notes.md"
+echo "uninstallable app list: ~/iCloud/Library/dotfiles/uninstallable_apps.md"
+echo "setup notes: ~/iCloud/Library/dotfiles/notes.md"

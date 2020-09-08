@@ -4,6 +4,11 @@ cd $(dirname $0)
 
 echo "tweaking macOS.."
 
+# Symlink iCloud Drive
+if [ ! -f ~/iCloud ]; then
+  ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
+fi
+
 # Show ~/Library folder
 chflags nohidden ~/Library
 [[ $(xattr ~/Library) = com.apple.FinderInfo ]] && xattr -d com.apple.FinderInfo ~/Library
