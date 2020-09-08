@@ -15,78 +15,19 @@ username=$(whoami)
 echo "installing command line tools.."
 xcode-select --install
 
-####################################################################### homebrew
-
-# check for homebrew, install if we don't have it
-if test ! $(which brew); then
-  echo "installing homebrew.."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-# update homebrew
-echo "updating homebrew.."
-brew update
-
-binaries=(
-  asdf
-  git
-  hub
-  rbenv
-  rbenv-gemset
-  ruby-build
-  wget
-  zsh-completions
-)
-
-echo "installing homebrew binaries.."
-brew $command ${binaries[@]}
-
-# homebrew cask apps
-apps=(
-  imageoptim
-  nvalt
-  qlcolorcode
-  qlimagesize
-  qlmarkdown
-  quicklook-csv
-  quicklook-json
-  suspicious-package
-)
-
-echo "installing cask apps.."
-brew cask $command ${apps[@]}
+sh ./scripts/homebrew.sh $command
 
 ####################################################################### dotfiles
 
-sh ./scripts/update_dotfiles.sh
+sh ./scripts/dotfiles.sh
 
 ############################################################################ SSH
 
-# Generate a SSH key (if none exist)
-if [ ! -f ~/.ssh/id_rsa ]; then
-  echo Enter your ssh key email address:
-  read email
-
-  echo "generating ssh key.."
-  mkdir ~/.ssh
-  ssh-keygen -t rsa -b 4096 -C "$email"
-  ssh-add ~/.ssh/id_rsa
-fi
+sh ./scripts/ssh.sh
 
 ############################################################################ Git
 
-echo "setting up git.."
-cp ./.gitignore ~/.gitignore
-
-# Generate a gitconfig file (if none exists)
-if [ ! -f ~/.gitconfig ]; then
-  echo Enter your Git config email address:
-  read email
-
-  sed "s/\[email\]/$email/" .gitconfig > ./.gitconfig_complete
-  sed -i '' "s/\[username\]/$username/" ./.gitconfig_complete
-  cp ./.gitconfig_complete ~/.gitconfig && rm ./.gitconfig_complete
-fi
+sh ./scripts/git.sh
 
 ########################################################################## Files
 
@@ -96,29 +37,11 @@ cp ./files/FiraMono-Bold.otf ~/Library/Fonts/
 
 ################################################################### Sublime Text
 
-echo "setting up sublime text.."
-# Link subl to st
-if [[ -f /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl && ! -f /usr/local/bin/st ]]; then
-  echo "linking st -> subl..."
-  ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/st
-fi
-cp ./sublime-text3/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+sh ./scripts/sublime_text.sh
 
 ################################################################### macOS tweaks
 
-echo "tweaking macOS.."
-
-# Show ~/Library folder
-chflags nohidden ~/Library
-[[ $(xattr ~/Library) = com.apple.FinderInfo ]] && xattr -d com.apple.FinderInfo ~/Library
-
-# Enable mouse right click
-# NOTE: Restart required
-defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton && defaults write com.apple.AppleMultitouchMouse.plist MouseButtonMode TwoButton && defaults write ~/Library/Preferences/com.apple.driver.AppleHIDMouse.plist Button2 -int 2
-
-# Safari dev menu
-# NOTE: Ensure terminal app has been granted full disk access
-defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && defaults write com.apple.Safari IncludeDevelopMenu -bool true && defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && defaults write -g WebKitDeveloperExtras -bool true
+sh ./scripts/macos.sh
 
 ########################################################################### tidy
 
@@ -130,4 +53,4 @@ brew cleanup
 echo "done!"
 echo "....."
 echo "full app list: ~/Library/Mobile\ Documents/com~apple~CloudDocs/Library/apps.md"
-echo "setup notes: ~/Library/Mobile\ Documents/com~apple~CloudDocs/Library/setup_notes.md"
+echo "setup notes: ~/Library/Mobile\ Documents/com~apple~CloudDocs/Library/notes.md"
