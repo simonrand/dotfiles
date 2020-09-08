@@ -1,5 +1,7 @@
 ################################################################### Sublime Text
 
+cd $(dirname $0)
+
 echo "setting up sublime text.."
 
 # Install Package Control for Sublime 3 and setup
@@ -17,4 +19,4 @@ if [[ -f /Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl && ! -f
 fi
 
 # Copy config files
-cp ./sublime-text3/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+cp ../sublime-text3/* ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/

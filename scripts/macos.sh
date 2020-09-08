@@ -1,5 +1,7 @@
 ################################################################### macOS tweaks
 
+cd $(dirname $0)
+
 echo "tweaking macOS.."
 
 # Show ~/Library folder

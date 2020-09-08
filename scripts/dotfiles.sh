@@ -1,5 +1,7 @@
 ####################################################################### dotfiles
 
+cd $(dirname $0)
+
 echo "copying dotfiles and global configs.."
 cp ../.zshrc ~/.zshrc
 cp ../.gemrc ~/.gemrc

@@ -1,5 +1,7 @@
 ####################################################################### homebrew
 
+cd $(dirname $0)
+
 if [ "$1" == "upgrade" ]; then
   command=upgrade
 else

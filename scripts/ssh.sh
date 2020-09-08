@@ -1,5 +1,7 @@
 ############################################################################ SSH
 
+cd $(dirname $0)
+
 # Generate a SSH key (if none exist)
 if [ ! -f ~/.ssh/id_rsa ]; then
   echo Enter your ssh key email address:
