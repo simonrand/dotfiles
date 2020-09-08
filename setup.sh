@@ -125,7 +125,7 @@ chflags nohidden ~/Library
 
 # Enable mouse right click
 # NOTE: Restart required
-defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton
+defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode TwoButton && defaults write com.apple.AppleMultitouchMouse.plist MouseButtonMode TwoButton && defaults write ~/Library/Preferences/com.apple.driver.AppleHIDMouse.plist Button2 -int 2
 
 # Safari dev menu
 # NOTE: Ensure terminal app has been granted full disk access
