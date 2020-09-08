@@ -27,6 +27,10 @@ sh ./scripts/homebrew.sh $command
 
 sh ./scripts/dotfiles.sh
 
+########################################################################### asdf
+
+sh ./scripts/asdf.sh
+
 ############################################################################ SSH
 
 sh ./scripts/ssh.sh
