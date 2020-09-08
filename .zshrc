@@ -44,12 +44,13 @@ mcd () { mkdir -p "$1" && cd "$1"; }
 alias cleardns='sudo killall -HUP mDNSResponder'
 
 # Git
-alias gcom='git commit -m'
+alias ga='git add'
 alias gc='git checkout'
+alias gcom='git commit -m'
+alias gl='git log'
+alias gp='git pull'
 alias gpo='git push origin HEAD'
 alias gst='git status'
-alias gl='git log'
-alias ga='git add'
 alias remove_merged_branches='git branch --merged | egrep -v "(^\*|master|staging)" | xargs git branch -d'
 
 # Hub/Git
