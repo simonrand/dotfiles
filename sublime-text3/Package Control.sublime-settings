@@ -3,6 +3,7 @@
   [
     "BracketHighlighter",
     "EditorConfig",
+    "GitLink",
     "Package Control",
     "Pretty JSON",
     "SideBarEnhancements",
