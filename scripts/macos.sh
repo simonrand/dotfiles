@@ -5,7 +5,7 @@ cd $(dirname $0)
 echo "tweaking macOS.."
 
 # Symlink iCloud Drive
-if [ ! -f ~/iCloud ]; then
+if [ ! -L ~/iCloud ]; then
   ln -s ~/Library/Mobile\ Documents/com\~apple\~CloudDocs ~/iCloud
 fi
 
