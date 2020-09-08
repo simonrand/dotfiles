@@ -6,3 +6,5 @@ email = [email]
 [core]
   editor = /usr/bin/nano
   excludesfile = /Users/[username]/.gitignore
+[pull]
+  ff = only
