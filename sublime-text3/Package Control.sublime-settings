@@ -2,6 +2,7 @@
   "installed_packages":
   [
     "BracketHighlighter",
+    "Case Conversion",
     "EditorConfig",
     "GitLink",
     "Package Control",
