@@ -19,4 +19,5 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.mouse MouseButtonMode T
 
 # Safari dev menu
 # NOTE: Ensure terminal app has been granted full disk access
+# This doesn't seem to be working anymore??
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true && defaults write com.apple.Safari IncludeDevelopMenu -bool true && defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true && defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true && defaults write -g WebKitDeveloperExtras -bool true

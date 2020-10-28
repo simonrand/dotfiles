@@ -12,7 +12,7 @@ fi
 
 ########################################################################### asdf
 
-echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+. $(brew --prefix asdf)/asdf.sh
 
 ########################################################################### Ruby
 
@@ -59,6 +59,9 @@ alias remove_merged_branches='git branch --merged | egrep -v "(^\*|master|stagin
 
 # Hub/Git
 alias gpr='hub pull-request -o -b'
+
+# gh
+alias gvpr='gh pr view -w'
 
 # Elixir
 alias ips='iex -S mix phoenix.server'
