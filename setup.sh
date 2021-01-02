@@ -53,5 +53,5 @@ sh ./scripts/sublime_text.sh
 
 echo "done!"
 echo "....."
-echo "uninstallable app list: ~/iCloud/Library/dotfiles/uninstallable_apps.md"
-echo "setup notes: ~/iCloud/Library/dotfiles/notes.md"
+echo "uninstallable app list: ~/Sync/Library/dotfiles/uninstallable_apps.md"
+echo "setup notes: ~/Sync/Library/dotfiles/notes.md"

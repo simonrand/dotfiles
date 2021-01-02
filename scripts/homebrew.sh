@@ -18,13 +18,13 @@ echo "updating homebrew.."
 brew update
 
 # Packages
-packages=$(cat ~/iCloud/Library/dotfiles/packages)
+packages=$(cat ~/Sync/Library/dotfiles/packages)
 
 echo "installing homebrew packages.."
 brew $command ${packages[@]}
 
 # Casks
-casks=$(cat ~/iCloud/Library/dotfiles/casks)
+casks=$(cat ~/Sync/Library/dotfiles/casks)
 
 echo "installing homebrew casks.."
 brew cask $command ${casks[@]}
